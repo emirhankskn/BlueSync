@@ -1,11 +1,13 @@
 import os
-from PIL import Image
+from PIL import Image, ImageDraw
 import customtkinter as ctk
+import threading
 
 class IconFactory:
     """Factory class for loading UI icons."""
 
-    ASSETS_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'assets')
+    # Use the absolute path to the assets directory based on the location of main.py
+    ASSETS_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'assets'))
 
     @staticmethod
     def create_device_icon(device_type:str, size:tuple=(24,24)) -> ctk.CTkImage:
@@ -41,6 +43,7 @@ class IconFactory:
     def create_bluetooth_icon(size:tuple=(64, 64)) -> Image:
         """Load bluetooth icon for the system tray"""
         icon_path = os.path.join(IconFactory.ASSETS_PATH, 'bluetooth.png')
+        print(f"Resolved icon path: {icon_path}")  # Debugging log
 
         try:
             icon = Image.open(icon_path)

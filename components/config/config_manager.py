@@ -40,6 +40,10 @@ class ConfigManager:
         """Get auto-connect device address"""
         return self.config.get('auto_connect_device', None)
     
+    def set_auto_connect_device(self, address) -> bool:
+        self.config['auto_connect_device'] = address
+        return self.save_config()
+    
     def get_renamed_devices(self) -> dict:
         """Get dictionary of renamed devices"""
         return self.config.get('renamed_devices', {})
