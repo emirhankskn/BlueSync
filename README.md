@@ -16,6 +16,9 @@ BlueSync is a modern Bluetooth device manager for Linux systems that provides an
 - **Theme Support**: Light, dark, and system theme options
 - **Notification System**: Battery level alerts and connection status updates
 
+## Screenshot of Application
+![BlueSync](components/assets/screenshot.png)
+
 ## Requirements
 
 - Python 3.x
